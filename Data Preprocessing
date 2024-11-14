@@ -1,0 +1,3 @@
+# Step 4: Data Preprocessing
+train_data = train_data.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], axis=1)
+test_data = test_data.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], axis=1)
