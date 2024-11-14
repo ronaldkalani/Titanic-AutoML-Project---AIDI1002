@@ -1,0 +1,50 @@
+# Import libraries
+from autogluon.tabular import TabularPredictor
+import pandas as pd
+
+# Load and preprocess data
+train_data = pd.read_csv('/content/train.csv')
+test_data = pd.read_csv('/content/test.csv')
+submission_format = pd.read_csv('/content/gender_submission(1).csv')
+housing_data = pd.read_csv('/content/Housing.csv')
+
+# Drop irrelevant columns in Titanic dataset (optional)
+train_data = train_data.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], axis=1)
+test_data = test_data.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], axis=1)
+
+# Train original model
+predictor = TabularPredictor(label='Survived').fit(train_data=train_data)
+
+# Train model with Neural Network added
+predictor_with_nn = TabularPredictor(label='Survived').fit(
+    train_data=train_data,
+    presets='best_quality',
+    hyperparameters={'NN': {}, 'GBM': {}, 'CAT': {}}
+)
+
+# Train model with increased stacking layers
+predictor_with_params = TabularPredictor(label='Survived').fit(
+    train_data=train_data,
+    hyperparameters='default',
+    num_stack_levels=2
+)
+
+# Make predictions for Titanic test data
+predictions = predictor.predict(test_data)
+submission_format['Survived'] = predictions
+submission_format.to_csv('/content/submission.csv', index=False)
+
+# Test the methodology on the Housing dataset (replace 'TargetColumn' with correct target name)
+housing_predictor = TabularPredictor(label='TargetColumn').fit(train_data=housing_data)
+housing_predictions = housing_predictor.predict(housing_data)
+housing_predictions.to_csv('/content/housing_predictions.csv', index=False)
+
+# Evaluate each model setup
+print("Original Predictor Leaderboard:")
+print(predictor.leaderboard(train_data, silent=True))
+
+print("Predictor with Neural Network Leaderboard:")
+print(predictor_with_nn.leaderboard(train_data, silent=True))
+
+print("Predictor with Parameter Adjustments Leaderboard:")
+print(predictor_with_params.leaderboard(train_data, silent=True))
