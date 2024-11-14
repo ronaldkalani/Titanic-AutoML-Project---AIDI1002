@@ -1,0 +1,3 @@
+#Step 5: Define and Train the Model on the Titanic Dataset
+# Initialize and train the AutoGluon predictor on Titanic data
+predictor = TabularPredictor(label='Survived').fit(train_data=train_data)
