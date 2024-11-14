@@ -1,0 +1,16 @@
+# Step 2: *Import Libraries
+from autogluon.tabular import TabularPredictor
+import pandas as pd
+# Step 3: Load and Inspect Data
+# Load Titanic dataset files
+train_data = pd.read_csv('/content/train.csv')
+test_data = pd.read_csv('/content/test.csv')
+submission_format = pd.read_csv('/content/gender_submission(1).csv')
+
+# Load Housing dataset for additional testing
+housing_data = pd.read_csv('/content/Housing.csv')
+
+# Inspect the data
+print(train_data.head())
+print(test_data.head())
+print(housing_data.head())
