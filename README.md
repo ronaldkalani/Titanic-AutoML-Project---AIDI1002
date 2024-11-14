@@ -3,14 +3,16 @@ Titanic-AutoML-Project---AIDI1002
 This project is part of the AIDI1002 course, focusing on applying AutoML techniques to the Titanic - Machine Learning from Disaster dataset. The goal is to predict the survival of passengers using machine learning models.
 
 Project Structure
-/Titanic - Machine Learning from Disaster/
-├── Housing.csv                   # Additional dataset (possibly for comparison or analysis)
-├── gender_submission.csv          # Example of submission format with predictions
-├── housing_predictions.csv        # Predictions generated for Housing.csv (if applicable)
-├── submission.csv                 # Final submission file in the required format
-├── test.csv                       # Test data for model evaluation
-├── titanic_predictions.csv        # Model predictions for the Titanic test data
-└── train.csv                      # Training data for model training
+
+Titanic - Machine Learning from Disaster
+Housing.csv 
+gender_submission.csv
+housing_predictions.csv
+submission.csv 
+test.csv 
+titanic_predictions.csv 
+train.csv 
+
 Dataset Information
 
 The project utilizes the Titanic - Machine Learning from Disaster dataset from Kaggle. The dataset consists of two main files:
