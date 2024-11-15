@@ -1,4 +1,7 @@
 Step 1: Setup and Installation
+
+pip install autogluon 
+
 Collecting autogluon
   Downloading autogluon-1.1.1-py3-none-any.whl.metadata (11 kB)
 Collecting autogluon.core==1.1.1 (from autogluon.core[all]==1.1.1->autogluon)
