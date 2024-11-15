@@ -16,6 +16,7 @@ Consider a real estate company aiming to predict house prices based on features 
 For a detailed exploration of AutoGluon's capabilities and performance, refer to the research paper "AutoGluon-Tabular: Robust and Accurate AutoML for Structured Data" by Nick Erickson et al.
 
 This project is part of the AIDI1002 course, focusing on applying AutoML techniques to the Titanic - Machine Learning from Disaster dataset. The goal is to predict the survival of passengers using machine learning models.
+
 Project Structure
 
 Titanic - Machine Learning from Disaster
