@@ -1,0 +1,13 @@
+# Retrain the model with NeuralNet included
+!pip install autogluon.tabular[all]
+from autogluon.tabular import TabularPredictor
+
+predictor_with_nn = TabularPredictor(label='Survived').fit(
+    train_data=train_data,
+    presets='best_quality',  # Ensures the highest performance
+    hyperparameters={ # Use 'NN_TORCH' instead of 'NN' for Neural Networks
+        'NN_TORCH': {}, 
+        'GBM': {}, 
+        'CAT': {}
+    }, 
+)
