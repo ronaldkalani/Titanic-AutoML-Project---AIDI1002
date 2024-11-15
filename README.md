@@ -1,7 +1,21 @@
 Titanic-AutoML-Project---AIDI1002
 
-This project is part of the AIDI1002 course, focusing on applying AutoML techniques to the Titanic - Machine Learning from Disaster dataset. The goal is to predict the survival of passengers using machine learning models.
+AutoGluon is an open-source AutoML framework designed to simplify the process of training high-accuracy machine learning models on tabular datasets. It automates tasks such as data preprocessing, model selection, hyperparameter tuning, and ensembling, allowing users to achieve robust predictive performance with minimal manual intervention.
 
+Key Features of AutoGluon:
+
+    Ease of Use: Requires only a single line of Python code to initiate model training on raw tabular data.
+    Model Ensembling: Employs multi-layer stacking of various models, including decision trees, neural networks, and gradient boosting machines, to enhance predictive accuracy.
+    Automatic Data Processing: Automatically identifies data types and applies appropriate preprocessing steps, such as handling missing values and encoding categorical variables.
+    Flexible and Extensible: Supports customization and extension, enabling users to incorporate their own models or preprocessing steps into the AutoML pipeline.
+
+Real-World Application Example:
+
+Consider a real estate company aiming to predict house prices based on features like area, number of bedrooms, and location. Using AutoGluon, the company can input their dataset directly, and AutoGluon will handle data preprocessing, model training, and evaluation. By leveraging its ensembling techniques, AutoGluon can provide accurate price predictions, assisting the company in making informed pricing decisions.
+
+For a detailed exploration of AutoGluon's capabilities and performance, refer to the research paper "AutoGluon-Tabular: Robust and Accurate AutoML for Structured Data" by Nick Erickson et al.
+
+This project is part of the AIDI1002 course, focusing on applying AutoML techniques to the Titanic - Machine Learning from Disaster dataset. The goal is to predict the survival of passengers using machine learning models.
 Project Structure
 
 Titanic - Machine Learning from Disaster
