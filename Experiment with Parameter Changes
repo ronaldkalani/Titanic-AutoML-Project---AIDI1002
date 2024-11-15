@@ -1,0 +1,8 @@
+#Different training parameters, such as adjusting the number of layers in model stacking. This will allow you to explore the impact of deeper ensembling:
+# Adjust the number of stack layers
+predictor_with_params = TabularPredictor(label='Survived').fit(
+    train_data=train_data,
+    hyperparameters='default',  # Use default models
+    num_stack_levels=2,  # Increase stack depth for testing
+    num_bag_folds=5  # Enable bagging with 5 folds (or any value >= 2)
+)
