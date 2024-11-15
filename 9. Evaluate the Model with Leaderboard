@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Get the leaderboard for each predictor
+original_leaderboard = predictor.leaderboard(train_data, silent=True)
+nn_leaderboard = predictor_with_nn.leaderboard(train_data, silent=True)
+params_leaderboard = predictor_with_params.leaderboard(train_data, silent=True)
+
+# Convert the leaderboards into DataFrames for better readability
+original_df = pd.DataFrame(original_leaderboard)
+nn_df = pd.DataFrame(nn_leaderboard)
+params_df = pd.DataFrame(params_leaderboard)
+
+# Print tables in a well-defined format
+print("Original Predictor Leaderboard:")
+print(original_df.to_string(index=False))  # Disable index for a cleaner table
+
+print("\nPredictor with Neural Network Leaderboard:")
+print(nn_df.to_string(index=False))
+
+print("\nPredictor with Parameter Adjustments Leaderboard:")
+print(params_df.to_string(index=False))
+

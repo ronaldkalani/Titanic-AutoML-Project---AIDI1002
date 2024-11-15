@@ -1,9 +1,0 @@
-# Compare performance of each model setup
-print("Original Predictor Leaderboard:")
-print(predictor.leaderboard(train_data, silent=True))
-
-print("Predictor with Neural Network Leaderboard:")
-print(predictor_with_nn.leaderboard(train_data, silent=True))
-
-print("Predictor with Parameter Adjustments Leaderboard:")
-print(predictor_with_params.leaderboard(train_data, silent=True))
