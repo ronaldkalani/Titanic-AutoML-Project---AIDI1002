@@ -1,0 +1,7 @@
+Step 6: Generate Predictions for the Titanic Dataset
+# Make predictions on the test data
+predictions = predictor.predict(test_data)
+
+# Prepare submission
+submission_format['Survived'] = predictions
+submission_format.to_csv('/content/submission.csv', index=False)
