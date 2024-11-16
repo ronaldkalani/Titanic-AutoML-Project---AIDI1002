@@ -1,4 +1,5 @@
-Leveraging AutoGluon for Predictive Analysis: Titanic Survival Prediction with Automated Machine Learning 
+
+Leveraging AutoGluon for Predictive Analysis: Titanic Survival Prediction with Automated Machine Learning
 
 AutoGluon is an open-source AutoML framework designed to simplify the process of training high-accuracy machine learning models on tabular datasets. It automates tasks such as data preprocessing, model selection, hyperparameter tuning, and ensembling, allowing users to achieve robust predictive performance with minimal manual intervention.
 
