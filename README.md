@@ -58,6 +58,40 @@ cd Titanic-AutoML-Project---AIDI1002
 Install the dependencies: Install required libraries with:
 
     pip install -r requirements.txt
+Paper Code
+# Import required libraries
+from autogluon.tabular import TabularPredictor
+import pandas as pd
+
+# Load the datasets
+train_data = pd.read_csv('train.csv')
+test_data = pd.read_csv('test.csv')
+submission = pd.read_csv('gender_submission.csv')
+
+# Data preprocessing
+# Handle missing values or feature engineering if necessary
+# For simplicity, let's assume AutoGluon will handle most preprocessing
+
+# Set target variable (the column we want to predict)
+target = 'Survived'
+
+# Train the AutoGluon model
+predictor = TabularPredictor(label=target, eval_metric='accuracy').fit(train_data)
+
+# Generate predictions on the test dataset
+test_predictions = predictor.predict(test_data)
+
+# Save predictions to a CSV file for submission
+submission['Survived'] = test_predictions
+submission.to_csv('submission.csv', index=False)
+
+# Evaluate the model on the training data
+results = predictor.evaluate(train_data)
+print("Training performance:", results)
+
+# Display feature importance
+feature_importance = predictor.feature_importance(train_data)
+print(feature_importance)
 
 Usage
 
